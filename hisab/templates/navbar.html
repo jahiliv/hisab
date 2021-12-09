@@ -1,0 +1,41 @@
+ <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Search..." />
+              </form>
+            </section>
+              
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href={% url 'home' %}>Homepage</a></li>
+                <li><a href={% url 'myprofile' %}>My Profile</a></li>
+                <li><a href={% url 'list' %}>Member List</a></li>
+                <li><a href={% url 'amount' %}>Amount</a></li>
+                {% comment %} <li>
+                  <span class="opener">Dropdown One</span>
+                  <ul>
+                    <li><a href="#">First Sub Menu</a></li>
+                    <li><a href="#">Second Sub Menu</a></li>
+                    <li><a href="#">Third Sub Menu</a></li>
+                  </ul>
+                </li> {% endcomment %}
+                {% comment %} <li>
+                  <span class="opener">Dropdown Two</span>
+                  <ul>
+                    <li><a href="#">Sub Menu #1</a></li>
+                    <li><a href="#">Sub Menu #2</a></li>
+                    <li><a href="#">Sub Menu #3</a></li>
+                  </ul>
+                </li> {% endcomment %}
+                <li><a href="#">Facebook Messenger</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>

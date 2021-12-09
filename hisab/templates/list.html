@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Member List {% endblock title %}
+
+{% block content %}
+            {% comment %} <section class="simple-post"> {% endcomment %}
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                  <img src="{% static 'assets/images/family.jpg' %}" alt="">
+
+                    {% comment %} <img src="{% static 'assets/images/simple-post.jpg' %}" alt=""> {% endcomment %}
+                    {% comment %} <div class="down-content">
+                      <p>Mauris aliquam ipsum nibh, id scelerisque leo congue vel. Vivamus ornare, eros et ornare consectetur, ipsum ipsum sollicitudin libero, at condimentum risus nulla non enim. Quisque sodales vestibulum arcu porttitor finibus. Phasellus dictum nisl id augue ornare, vel interdum nibh mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                      <p>Phasellus vestibulum venenatis interdum. Praesent augue massa, tincidunt eget dignissim a, scelerisque vitae ante. Curabitur a arcu tellus. Donec et massa at dolor condimentum ornare nec non lorem. Maecenas non egestas metus, sed ultricies lectus. Aliquam sit amet gravida tellus. Phasellus id erat nec mi ullamcorper viverra. Quisque vitae pharetra sem. Maecenas sit amet velit ultrices, malesuada quam id, porta nisl. Cras scelerisque ex ut bibendum egestas.</p>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            {% comment %} </section> {% endcomment %}
+            <!-- Tables -->
+            <section class="tables">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                      <h2>Cousin List</h2>
+                    </div>
+                    <div class="default-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th style="text-align:center">Serial no.</th>
+                            <th style="text-align:center">Name</th>
+                            <th style="text-align:center">Amount</th>
+                            <th style="text-align:center">Details</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for cousin in user %}
+                          <tr>
+                            <td style="text-align:center">{{cousin.id}}</td>
+                            <td style="text-align:center">{{cousin.user.first_name}} {{" "}} {{cousin.user.last_name}}</td>
+                            <td style="text-align:center">{{cousin.amount}}</td>
+                            <td style="text-align:center" class="border-rounded-button"><a href="{% url 'details' %}">Details</a> </td>
+                          </tr>
+                        {% endfor %}  
+                        </tbody>
+                      </table>
+                      <ul class="table-pagination">
+                        <li><a href="#">Previous</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">Next</a></li>
+                      </ul>
+                    </div>
+                    {% comment %} <div class="alternate-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Product no.</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>#2005</td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>$19.95</td>
+                          </tr>
+                          <tr>
+                            <td>#2006</td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>$19.95</td>
+                          </tr>
+                          <tr>
+                            <td>#2007</td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>$19.95</td>
+                          </tr>
+                          <tr>
+                            <td>#2008</td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>$19.95</td>
+                          </tr>
+                          <tr>
+                            <td>#2008</td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>$19.95</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <ul class="table-pagination">
+                        <li><a href="#">Previous</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">...</a></li>
+                        <li class="active"><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">Next</a></li>
+                      </ul>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          {% comment %} </div>
+        </div> {% endcomment %}
+
+ {% endblock content %}
